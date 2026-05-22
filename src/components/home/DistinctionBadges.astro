@@ -1,0 +1,73 @@
+---
+---
+<section class="distinction">
+    <div class="distinction-text">
+        <h2>Clinical expertise in a fractured system.</h2>
+        <p>While the healthcare system is brilliant, it is often busy and impenetrable. I provide the clinical connection my clients need to make informed, high-stakes decisions under pressure.</p>
+    </div>
+    <ul class="badge-list">
+        <li class="badge-item">Physician Assistant-Certified</li>
+        <li class="badge-item">15 Years Clinical Experience</li>
+        <li class="badge-item">Oncology & Complex Care Specialties</li>
+    </ul>
+</section>
+
+<style>
+    .distinction {
+        padding: 8rem 5%;
+        background: var(--white);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        border-top: 1px solid #eee;
+    }
+
+    .distinction-text h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .distinction-text p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+    }
+
+    .badge-list {
+        list-style: none;
+    }
+
+    .badge-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        font-style: italic;
+        color: var(--royal-blue);
+    }
+
+    .badge-item::before {
+        content: "";
+        width: 20px;
+        height: 1px;
+        background: var(--royal-blue);
+    }
+
+    /* Tablet and Mobile Breakpoint */
+    @media (max-width: 768px) {
+        .distinction {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding: 4rem 5%;
+        }
+        .distinction-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .badge-item {
+            font-size: 1.2rem;
+        }
+    }
+</style>

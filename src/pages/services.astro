@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServicePillars from '../components/services/ServicePillars.astro';
+import EngagementTiers from '../components/services/EngagementTiers.astro';
+---
+
+<BaseLayout title="Clinical Stewardship & Services" description="Expert clinical navigation for high-stakes medical situations. Review our consultation and monthly advocacy tiers.">
+    
+    <header class="services-hero">
+        <div class="hero-container">
+            <h1>Clinical Stewardship</h1>
+            <p>Expert clinical navigation for high-stakes medical situations. I provide the professional advocacy and record translation required to make life-altering decisions with clarity.</p>
+        </div>
+    </header>
+
+    <ServicePillars />
+
+    <EngagementTiers />
+
+</BaseLayout>
+
+<style>
+    .services-hero {
+        padding: 8rem 5%;
+        text-align: center;
+        background: var(--white);
+        border-bottom: 1px solid #eee;
+    }
+
+    .hero-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .services-hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
+
+    .services-hero p {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+        .services-hero {
+            padding: 4rem 5%;
+        }
+        .services-hero h1 {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+        .services-hero p {
+            font-size: 1.1rem;
+        }
+    }
+</style>

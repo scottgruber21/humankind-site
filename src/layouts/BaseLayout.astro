@@ -1,0 +1,29 @@
+---
+import '../styles/global.css';
+import Nav from '../components/global/Nav.astro';
+import Footer from '../components/global/Footer.astro';
+
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const { title, description = "Expert clinical navigation for high-stakes medical situations." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | Human Kind Advocates</title>
+    <meta name="description" content={description}>
+</head>
+<body>
+    <Nav />
+    <main>
+        <slot />
+    </main>
+    <Footer />
+</body>
+</html>

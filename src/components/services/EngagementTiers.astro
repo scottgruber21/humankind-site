@@ -1,0 +1,186 @@
+---
+---
+<section class="engagement-tiers" id="tiers">
+    <div class="tiers-container">
+        <div class="tier-row">
+            <div class="tier-meta">
+                <h4>Entry</h4>
+                <h2>Clarity Consultation</h2>
+                <div class="tier-price">$500 One-Time</div>
+            </div>
+            <div class="tier-details">
+                <p>The clearest 90 minutes you'll spend on this diagnosis. Best for early-stage navigation or second-opinion decisions.</p>
+                <ul>
+                    <li>Medical record pre-review</li>
+                    <li>90-minute deep-dive call</li>
+                    <li>Written summary of findings</li>
+                    <li>Prioritized action plan</li>
+                </ul>
+            </div>
+            <div class="tier-cta">
+                <a href="/contact" class="btn-outline">Request Consult</a>
+            </div>
+        </div>
+
+        <div class="tier-row">
+            <div class="tier-meta">
+                <h4>Retainer</h4>
+                <h2>Active Advocacy</h2>
+                <div class="tier-price">$2,500 / Month</div>
+            </div>
+            <div class="tier-details">
+                <p>Ongoing advocacy for clients navigating active treatment or complex care transitions. Limited to 5 concurrent clients.</p>
+                <ul>
+                    <li>4 calls/month (45 min each)</li>
+                    <li>Virtual appointment attendance</li>
+                    <li>Continuous record review</li>
+                    <li>Provider communication</li>
+                    <li>24-hour priority response</li>
+                    <li>Care coordination & referrals</li>
+                </ul>
+            </div>
+            <div class="tier-cta">
+                <a href="/contact" class="btn-outline">Inquire</a>
+            </div>
+        </div>
+
+        <div class="tier-row">
+            <div class="tier-meta">
+                <h4>Premium</h4>
+                <h2>White Glove</h2>
+                <div class="tier-price">$4,500 / Month</div>
+            </div>
+            <div class="tier-details">
+                <p>Full-service advocacy for high-complexity cases or family members who need a dedicated ally fully in their corner. Limited to 2 concurrent clients.</p>
+                <ul>
+                    <li>Unlimited calls & messaging</li>
+                    <li>In-person appointment attendance</li>
+                    <li>Hospital & facility navigation</li>
+                    <li>Direct provider outreach</li>
+                    <li>Same-day response guarantee</li>
+                    <li>Family communication support</li>
+                </ul>
+            </div>
+            <div class="tier-cta">
+                <a href="/contact" class="btn-outline">Join Waitlist</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .engagement-tiers {
+        background: var(--bg-beige);
+        padding: 8rem 5%;
+    }
+
+    .tiers-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .tier-row {
+        display: grid;
+        grid-template-columns: 1.5fr 2.5fr 1fr;
+        gap: 4rem;
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(10, 34, 64, 0.2);
+        align-items: flex-start;
+    }
+
+    .tier-row:last-child {
+        border-bottom: none;
+    }
+
+    .tier-meta h4 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+    }
+
+    .tier-meta h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .tier-price {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        color: var(--royal-blue);
+        font-style: italic;
+    }
+
+    .tier-details p {
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        margin-bottom: 1.5rem;
+    }
+
+    .tier-details ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .tier-details li {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .tier-details li::before {
+        content: "—";
+        color: var(--royal-blue);
+    }
+
+    .tier-cta {
+        text-align: right;
+    }
+
+    .btn-outline {
+        display: inline-block;
+        border: 1px solid var(--navy);
+        padding: 1rem 2rem;
+        text-decoration: none;
+        color: var(--navy);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .btn-outline:hover {
+        background: var(--royal-blue);
+        border-color: var(--royal-blue);
+        color: white;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 960px) {
+        .tier-row {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        .tier-meta h2 {
+            font-size: 2.2rem;
+        }
+        .tier-cta {
+            text-align: left;
+        }
+        .tier-details ul {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+    }
+</style>

@@ -1,0 +1,95 @@
+---
+---
+<div class="process">
+    <h2>The Path to Clarity</h2>
+    
+    <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+            <strong>Discovery Call</strong>
+            <p>A free 20-minute screening conversation to determine fit and identify the clinical tier you need.</p>
+        </div>
+    </div>
+    
+    <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+            <strong>Recommendation</strong>
+            <p>Within 24 hours, I provide a written proposal based on the complexity and urgency of your case.</p>
+        </div>
+    </div>
+    
+    <div class="step no-border">
+        <div class="step-num">03</div>
+        <div class="step-content">
+            <strong>Engagement</strong>
+            <p>Immediate clinical onboarding, record review, and coordination with your medical team.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .process h2 {
+        font-size: 2.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .step {
+        margin-bottom: 3rem;
+        position: relative;
+        padding-left: 3rem;
+    }
+
+    /* The vertical timeline indicator line */
+    .step::before {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 25px;
+        width: 1px;
+        height: calc(100% + 1rem);
+        background: #ddd;
+    }
+
+    .step.no-border::before {
+        display: none;
+    }
+
+    .step-num {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: var(--bg-beige);
+        width: 24px;
+        height: 24px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        color: var(--royal-blue);
+        line-height: 1;
+    }
+
+    .step-content strong {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: var(--navy);
+    }
+
+    .step-content p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+    }
+
+    /* Responsive scaling */
+    @media (max-width: 768px) {
+        .process h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+        .step {
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+</style>
