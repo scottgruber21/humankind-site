@@ -3,7 +3,14 @@
         <div class="logo-box">HKA</div>
         <span class="brand-name">Human Kind Advocates</span>
     </div>
-    <div class="nav-links">
+    
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
         <a href="/">Home</a>
         <a href="/services">Services</a>
         <a href="/insights">Insights</a>
@@ -33,26 +40,102 @@
         color: white; font-weight: bold;
     }
     .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: var(--navy); }
-    .nav-links a { text-decoration: none; color: var(--text-dark); margin-left: 2rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; transition: color 0.3s ease; }
+    
+    /* Desktop Nav Links Styling */
+    .nav-links a { text-decoration: none; color: var(--text-dark); margin-left: 2rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+        font-weight: 600; transition: color 0.3s ease; }
     .nav-links a:hover { color: var(--royal-blue); }
+
+    /* Hide hamburger by default on desktop */
+    .mobile-nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 6px;
+        padding: 0.5rem;
+        z-index: 1001;
+    }
+    .hamburger-bar {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--navy);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 
     /* Mobile Breakpoint */
     @media (max-width: 768px) {
-        nav {
-            flex-direction: column;
-            gap: 1.5rem;
-            padding: 1.5rem 5%;
-            text-align: center;
-        }
-        .nav-links {
+        .mobile-nav-toggle {
             display: flex;
-            gap: 1rem;
-            margin-left: 0;
-            flex-wrap: wrap;
-            justify-content: center;
         }
+
+        /* Animate hamburger to an 'X' when open */
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Turn nav-links into a full-screen drawer overlay */
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%; /* Hidden off-screen by default */
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(245, 242, 237, 0.98);
+            backdrop-filter: blur(15px);
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            margin-left: 0;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1000;
+        }
+
+        /* When the navigation drawer is active */
+        .nav-links.active {
+            right: 0;
+        }
+
         .nav-links a {
             margin-left: 0;
+            font-size: 1.2rem; /* Larger touch targets for mobile */
         }
     }
 </style>
+
+<script>
+    // This script runs automatically in the client browser
+    const toggleButton = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (toggleButton && navLinks) {
+        toggleButton.addEventListener('click', () => {
+            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+            
+            // Toggle attributes and classes
+            toggleButton.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+            navLinks.classList.toggle('active');
+        });
+
+        // Optional: Close the drawer if a link is clicked
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                toggleButton.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+</script>
