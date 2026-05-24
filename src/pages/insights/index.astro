@@ -1,0 +1,109 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allPosts = await getCollection('insights');
+const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const featuredPost = sortedPosts.find(post => post.data.isFeatured) || sortedPosts[0];
+const regularPosts = sortedPosts.filter(post => post.id !== featuredPost?.id);
+---
+
+<BaseLayout title="Clinical Insights & Perspectives" description="A library of clinical navigation perspectives for families facing high-stakes medical decisions.">
+  
+  <header class="archive-header">
+    <h1>Clinical<br>Insights.</h1>
+    <p>A library of clinical navigation perspectives for families facing high-stakes medical decisions.</p>
+  </header>
+
+  {featuredPost && (
+    /* Fix 1: Change featuredPost.slug to featuredPost.id */
+    <a href={`/insights/${featuredPost.id}`} class="featured-post">
+      <div class="featured-img"></div>
+      <div class="featured-content">
+        <span class="label">Featured Insight</span>
+        <h2>{featuredPost.data.title}</h2>
+        <p>{featuredPost.data.excerpt}</p>
+        <span class="read-link">Read Case Study</span>
+      </div>
+    </a>
+  )}
+
+  <main class="post-list">
+    {regularPosts.map(post => (
+      /* Fix 2: Change post.slug to post.id */
+      <a href={`/insights/${post.id}`} class="post-row">
+        <div class="post-date">
+          {new Date(post.data.date).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+        </div>
+        <div class="post-title">
+          <h3>{post.data.title}</h3>
+        </div>
+        <div class="post-excerpt">
+          "{post.data.excerpt}"
+        </div>
+      </a>
+    ))}
+  </main>
+</BaseLayout>
+
+<style>
+  .archive-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 5% 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-end;
+  }
+  .archive-header h1 { font-size: 5rem; line-height: 0.9; }
+  .archive-header p { font-size: 1.1rem; color: var(--text-muted); max-width: 400px; }
+
+  .featured-post { 
+    max-width: 1110px;
+    margin: 4rem auto; 
+    background: var(--white); 
+    display: flex; 
+    align-items: stretch; 
+    border: 1px solid #eee; 
+    text-decoration: none;
+    color: inherit;
+  }
+  .featured-img { flex: 1.2; background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80') center/cover; min-height: 400px; }
+  .featured-content { flex: 1; padding: 4rem; display: flex; flex-direction: column; justify-content: center; }
+  .featured-content .label { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; color: var(--royal-blue); font-weight: 600; margin-bottom: 1rem; }
+  .featured-content h2 { font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.1; color: var(--navy); }
+  .featured-content p { color: var(--text-muted); margin-bottom: 2rem; }
+  .read-link { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--royal-blue); border-bottom: 1px solid; padding-bottom: 4px; align-self: flex-start; }
+
+  .post-list { padding: 4rem 5% 10rem; max-width: 1200px; margin: 0 auto; }
+  .post-row { 
+    display: grid; 
+    grid-template-columns: 1fr 2.5fr 1.5fr; 
+    padding: 3rem 0; 
+    border-bottom: 1px solid rgba(10, 34, 64, 0.1); 
+    align-items: baseline;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+  .post-row:hover { background: rgba(255,255,255,0.4); padding-left: 1.5rem; }
+  .post-date { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+  .post-title h3 { font-size: 1.8rem; color: var(--navy); transition: color 0.3s; font-weight: 400; }
+  .post-row:hover .post-title h3 { color: var(--royal-blue); }
+  .post-excerpt { font-size: 0.95rem; color: var(--text-muted); text-align: right; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
+
+  @media (max-width: 960px) {
+    .archive-header { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 5% 2rem; }
+    .archive-header h1 { font-size: 3.2rem; }
+    .featured-post { flex-direction: column; margin: 2rem 5%; }
+    .featured-img { min-height: 250px; }
+    .featured-content { padding: 2rem 1.5rem; }
+    .featured-content h2 { font-size: 2rem; }
+    
+    .post-row { grid-template-columns: 1fr; gap: 0.5rem; padding: 2rem 0; }
+    .post-excerpt { text-align: left; margin-top: 0.5rem; }
+    .post-row:hover { padding-left: 0; background: transparent; }
+  }
+</style>

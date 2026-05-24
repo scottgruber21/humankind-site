@@ -1,0 +1,238 @@
+---
+---
+<section class="inquiry-section">
+    <div class="form-container">
+        <h2>Initiate Clinical Onboarding</h2>
+        <p class="form-subtitle">Please provide initial structural context below to qualify fit for a free 20-minute screening conversation.</p>
+        
+        <form action="#" method="POST" class="intake-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="name">Your Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com" />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(555) 000-0000" />
+                </div>
+
+                <div class="form-group">
+                    <label for="relationship">Relationship to Patient</label>
+                    <select id="relationship" name="relationship" required>
+                        <option value="" disabled selected>Select option</option>
+                        <option value="self">I am the patient</option>
+                        <option value="spouse">Spouse / Partner</option>
+                        <option value="child">Adult Child</option>
+                        <option value="professional">Referring Professional (Attorney/MD)</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="diagnosis">Primary Diagnosis or Situation Context</label>
+                <input type="text" id="diagnosis" name="diagnosis" required placeholder="e.g., Recent cancer recurrence, complex specialist referral chain" />
+            </div>
+
+            <div class="form-group full-width">
+                <label for="gap">In your own words, what is the most broken part of your current care experience?</label>
+                <textarea id="gap" name="gap" rows="4" required placeholder="e.g., Communication gaps between specialists, confusing pathology or treatment staging reports"></textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="tier">Anticipated Engagement Alignment</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="tier" value="consultation" />
+                        <span><strong>Clarity Consultation</strong> ($500 One-Time)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="tier" value="active" />
+                        <span><strong>Active Advocacy</strong> ($2,500/Mo Retainer)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="tier" value="white-glove" />
+                        <span><strong>White Glove Support</strong> ($4,500/Mo Retainer)</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" class="btn-submit">Request Discovery Screening</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<style>
+    .inquiry-section {
+        padding: 8rem 5%;
+        background: var(--white);
+    }
+
+    .form-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .form-container h2 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+
+    .form-subtitle {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 4rem;
+        max-width: 600px;
+    }
+
+    .intake-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+        grid-column: span 2;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: var(--navy);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 1rem;
+        border: 1px solid rgba(10, 34, 64, 0.2);
+        background: var(--bg-beige);
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: var(--text-dark);
+        border-radius: 0;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--royal-blue);
+    }
+
+    /* Radio selections custom design */
+    .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .radio-label {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.2rem;
+        border: 1px solid rgba(10, 34, 64, 0.1);
+        cursor: pointer;
+        background: var(--bg-beige);
+        transition: all 0.3s ease;
+    }
+
+    .radio-label:hover {
+        border-color: var(--royal-blue);
+    }
+
+    .radio-label input[type="radio"] {
+        accent-color: var(--royal-blue);
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .radio-label span {
+        font-size: 0.95rem;
+        color: var(--text-dark);
+    }
+
+    .radio-label strong {
+        color: var(--navy);
+    }
+
+    .form-submit {
+        margin-top: 2rem;
+    }
+
+    .btn-submit {
+        display: inline-block;
+        background: var(--navy);
+        color: white;
+        border: none;
+        padding: 1.2rem 3rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 15px 15px 0 var(--bg-beige);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background: var(--royal-blue);
+        transform: translate(-5px, -5px);
+        box-shadow: 20px 20px 0 var(--bg-beige);
+    }
+
+    /* Mobile Adaptations */
+    @media (max-width: 768px) {
+        .inquiry-section {
+            padding: 4rem 5%;
+        }
+        .form-container h2 {
+            font-size: 2.4rem;
+        }
+        .form-subtitle {
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+        .form-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        .form-group.full-width {
+            grid-column: span 1;
+        }
+        .radio-label {
+            padding: 1rem;
+        }
+        .btn-submit {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
