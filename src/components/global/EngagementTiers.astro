@@ -1,9 +1,9 @@
 ---
-
 ---
 
 <section class="engagement-tiers" id="tiers">
     <div class="tiers-container">
+        
         <div class="tier-row">
             <div class="tier-meta">
                 <h4>Entry</h4>
@@ -15,12 +15,6 @@
                     The clearest 90 minutes you'll spend on this diagnosis. Best
                     for early-stage navigation or second-opinion decisions.
                 </p>
-                <ul>
-                    <li>Medical record pre-review</li>
-                    <li>90-minute deep-dive call</li>
-                    <li>Written summary of findings</li>
-                    <li>Prioritized action plan</li>
-                </ul>
             </div>
             <div class="tier-cta">
                 <a href="/contact" class="btn-outline">Request Consult</a>
@@ -38,14 +32,6 @@
                     Ongoing advocacy for clients navigating active treatment or
                     complex care transitions.
                 </p>
-                <ul>
-                    <li>4 calls/month (45 min each)</li>
-                    <li>Virtual appointment attendance</li>
-                    <li>Continuous record review</li>
-                    <li>Provider communication</li>
-                    <li>24-hour priority response</li>
-                    <li>Care coordination & referrals</li>
-                </ul>
             </div>
             <div class="tier-cta">
                 <a href="/contact" class="btn-outline">Inquire</a>
@@ -62,21 +48,13 @@
                 <p>
                     Full-service advocacy for high-complexity cases or family
                     members who need a dedicated ally fully in their corner.
-                    
                 </p>
-                <ul>
-                    <li>Unlimited calls & messaging</li>
-                    <li>In-person appointment attendance</li>
-                    <li>Hospital & facility navigation</li>
-                    <li>Direct provider outreach</li>
-                    <li>Same-day response guarantee</li>
-                    <li>Family communication support</li>
-                </ul>
             </div>
             <div class="tier-cta">
                 <a href="/contact" class="btn-outline">Contact Me</a>
             </div>
         </div>
+        
     </div>
 </section>
 
@@ -95,9 +73,9 @@
         display: grid;
         grid-template-columns: 1.5fr 2.5fr 1fr;
         gap: 4rem;
-        padding: 5rem 0;
-        border-bottom: 1px solid rgba(10, 34, 64, 0.2);
-        align-items: flex-start;
+        padding: 4rem 0;
+        border-bottom: 1px solid rgba(10, 34, 64, 0.15); /* Softened the border slightly */
+        align-items: center; /* Changed from flex-start to center since content is shorter */
     }
 
     .tier-row:last-child {
@@ -116,8 +94,9 @@
 
     .tier-meta h2 {
         font-size: 3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         line-height: 1.1;
+        color: var(--navy);
     }
 
     .tier-price {
@@ -128,29 +107,11 @@
     }
 
     .tier-details p {
-        font-size: 1.1rem;
+        font-size: 1.25rem; /* Bumped up font size slightly to fill space better */
+        line-height: 1.6;
         color: var(--text-dark);
-        margin-bottom: 1.5rem;
-    }
-
-    .tier-details ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-
-    .tier-details li {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .tier-details li::before {
-        content: "—";
-        color: var(--royal-blue);
+        margin: 0;
+        max-width: 90%;
     }
 
     .tier-cta {
@@ -181,18 +142,21 @@
     @media (max-width: 960px) {
         .tier-row {
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
             padding: 3rem 0;
+            text-align: center; /* Center everything on mobile */
+            align-items: center;
         }
         .tier-meta h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
         }
         .tier-cta {
-            text-align: left;
+            text-align: center;
+            margin-top: 1rem;
         }
-        .tier-details ul {
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
+        .tier-details p {
+            max-width: 100%;
+            font-size: 1.1rem;
         }
     }
 </style>

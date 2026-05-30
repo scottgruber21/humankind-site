@@ -1,0 +1,264 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="For Professionals | Human Kind Advocates">
+    
+    <header class="providers-hero">
+        <div class="hero-container">
+            <span class="eyebrow">Professional Partnerships</span>
+            <h1>A clinical complement to your practice.</h1>
+            <p>
+                I serve as a specialized resource for professionals whose clients are navigating complex medical crises. I handle the clinical translation, so you can focus on what you do best.
+            </p>
+        </div>
+    </header>
+
+    <section class="audiences">
+        <div class="container">
+            <div class="audience-grid">
+                
+                <div class="audience-card">
+                    <h3>For Estate Attorneys & Wealth Advisors</h3>
+                    <p>
+                        When a high-net-worth client receives a serious diagnosis during the planning process, legal and financial decisions suddenly become urgent. Families are overwhelmed, and there is rarely anyone translating the medical side of the equation.
+                    </p>
+                    <p>
+                        <strong>How I help:</strong> I step in to manage medical record review, second opinions, and care coordination. Your clients receive the same level of expert guidance for their health that they expect from you financially.
+                    </p>
+                </div>
+
+                <div class="audience-card">
+                    <h3>For Concierge & DPC Physicians</h3>
+                    <p>
+                        Your model is built on doing more for your patients—but there are limits to what any one physician can provide when a patient enters active cancer treatment or gets caught in a complex specialist referral chain.
+                    </p>
+                    <p>
+                        <strong>How I help:</strong> I am a complement, not a competitor. I navigate everything outside your lane—attending specialist appointments and facilitating major center second opinions—so your patients come back to you more informed.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="professional-faq">
+        <div class="container">
+            <div class="faq-header">
+                <h2>Practice & Integration Details</h2>
+                <p>Clear boundaries and clinical integrity are the foundation of my referrals.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Clinical Scope & Liability</h4>
+                    <p>
+                        I am clear with every client: I do not provide medical treatment, and I do not diagnose. I provide informed guidance, clinical translation, and coordination. I carry professional liability coverage, and clients sign an agreement that clearly defines my role as an advocate, not a treating clinician.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Advocacy vs. Social Work</h4>
+                    <p>
+                        Hospital social workers are incredible, but they primarily focus on psychosocial support and insurance navigation for dozens of patients simultaneously. I provide dedicated clinical expertise: reading pathology reports, understanding staging criteria, and communicating peer-to-peer with physicians.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Referral Fee Policy</h4>
+                    <p>
+                        Integrity is critical to both of our practices. I do not pay or receive referral fees. My goal is to be genuinely useful to any client you send my way, ensuring they know you connected them to someone who helped.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="provider-cta">
+        <div class="container text-center">
+            <h2>Let's connect.</h2>
+            <p>I'd love to schedule a brief 15-minute introduction to understand your practice and see if there is a mutual fit for future client needs.</p>
+            <a href="/contact" class="btn-solid">Request an Introduction</a>
+        </div>
+    </section>
+
+</BaseLayout>
+
+<style>
+    /* Hero */
+    .providers-hero {
+        padding: 8rem 5% 6rem;
+        background: var(--navy);
+        color: var(--white);
+        text-align: center;
+    }
+
+    .hero-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-container h1{
+        color: white;
+    }
+
+    .eyebrow {
+        font-family: 'Inter', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: white;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    .providers-hero h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 4rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+    }
+
+    .providers-hero p {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+    }
+
+    /* Audiences */
+    .audiences {
+        padding: 6rem 5%;
+        background: var(--bg-beige);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .audience-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .audience-card {
+        background: var(--white);
+        padding: 4rem;
+        border-top: 4px solid var(--royal-blue);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
+
+    .audience-card h3 {
+        font-size: 1.8rem;
+        color: var(--navy);
+        margin-bottom: 1.5rem;
+    }
+
+    .audience-card p {
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .audience-card strong {
+        color: var(--navy);
+        font-weight: 600;
+    }
+
+    /* FAQ */
+    .professional-faq {
+        padding: 8rem 5%;
+        background: var(--white);
+    }
+
+    .faq-header {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    .faq-header h2 {
+        font-size: 3rem;
+        color: var(--navy);
+        margin-bottom: 1rem;
+    }
+
+    .faq-header p {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+    }
+
+    .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .faq-item h4 {
+        font-size: 1.8rem;
+        color: var(--navy);
+        margin-bottom: 1rem;
+        border-bottom: 1px solid rgba(10, 34, 64, 0.1);
+        padding-bottom: 0.5rem;
+    }
+
+    .faq-item p {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+
+    /* CTA */
+    .provider-cta {
+        padding: 6rem 5% 8rem;
+        background: var(--bg-beige);
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .text-center {
+        text-align: center;
+        max-width: 600px;
+    }
+
+    .provider-cta h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3.5rem;
+        color: var(--navy);
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    .provider-cta p {
+        font-size: 1.15rem;
+        color: var(--text-dark);
+        margin-bottom: 3rem;
+    }
+
+    .btn-solid {
+        display: inline-block;
+        background: var(--navy);
+        color: var(--white);
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        transition: background 0.3s ease;
+    }
+
+    .btn-solid:hover {
+        background: var(--royal-blue);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+        .providers-hero h1 { font-size: 3rem; }
+        .audience-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .audience-card { padding: 2.5rem; }
+        .faq-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+</style>

@@ -1,0 +1,129 @@
+---
+---
+
+<section class="why-kim" id="about">
+    <div class="container">
+        
+        <div class="image-column">
+            <div class="portrait-wrapper" aria-label="Portrait of Kim, PA-C"></div>
+        </div>
+
+        <div class="text-column">
+            <h2>Meet Your Advocate</h2>
+            <span class="credentials">Kim, PA-C — Founder</span>
+            
+            <div class="bio-content">
+                <p>
+                    With 18 years of clinical experience as a Physician Assistant specializing in oncology, bone marrow transplant, and orthopedics, I have seen the healthcare system from the inside.
+                </p>
+                <p>
+                    I know what it takes to get answers, and I know how easily things can fall through the cracks when a patient's care spans multiple specialists, brilliant doctors, and busy institutions.
+                </p>
+                <p class="philosophy">
+                    My commitment is simple: I sit on your side of the table, speak your doctors' language, and make sure you have the clarity to make the right decisions.
+                </p>
+            </div>
+            
+            <a href="/contact" class="link-arrow">Let's talk about your situation &rarr;</a>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .why-kim {
+        padding: 8rem 5%;
+        background-color: var(--white);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr; /* Slightly asymmetric so the text has room to breathe */
+        gap: 6rem;
+        align-items: center;
+    }
+
+    .image-column {
+        width: 100%;
+    }
+
+    .portrait-wrapper {
+        width: 100%;
+        aspect-ratio: 4/5;
+        background-color: var(--bg-beige); /* Fallback color */
+        /* Replace url with actual portrait of Kim */
+        background-image: url('/kim.jpg'); 
+        background-position: center;
+        background-size: cover;
+        border-radius: 4px;
+        box-shadow: -15px 15px 0 var(--navy); /* Mirrors the button shadow styling from the hero */
+    }
+
+    .text-column h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3.5rem;
+        color: var(--navy);
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+        font-style: italic;
+    }
+
+    .credentials {
+        display: inline-block;
+        font-family: 'Inter', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--royal-blue);
+        margin-bottom: 2.5rem;
+    }
+
+    .bio-content p {
+        font-size: 1.15rem;
+        color: var(--text-dark);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .bio-content p.philosophy {
+        font-weight: 600;
+        color: var(--navy);
+        margin-top: 2rem;
+        padding-left: 1.5rem;
+        border-left: 3px solid var(--royal-blue);
+    }
+
+    .link-arrow {
+        display: inline-block;
+        margin-top: 2rem;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--royal-blue);
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .link-arrow:hover {
+        color: var(--navy);
+        transform: translateX(5px);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 960px) {
+        .container {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+        .portrait-wrapper {
+            aspect-ratio: 1/1; /* Switch to square on mobile so it doesn't take up the whole screen */
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .text-column h2 {
+            font-size: 2.8rem;
+        }
+    }
+</style>
