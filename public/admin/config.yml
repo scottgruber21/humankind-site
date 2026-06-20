@@ -1,0 +1,242 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Content: create {{collection}} “{{slug}}”"
+    update: "Content: update {{collection}} “{{slug}}”"
+    delete: "Content: delete {{collection}} “{{slug}}”"
+    uploadMedia: "Content: upload “{{path}}”"
+    deleteMedia: "Content: delete “{{path}}”"
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+editor:
+  preview: false
+
+show_preview_links: false
+search: false
+
+collections:
+  - name: "page_copy"
+    label: "Page Copy"
+    description: "Edit text only. Layout, navigation, footer, images, pricing, and form behavior are locked."
+    format: "json"
+    files:
+      - label: "Homepage"
+        name: "home"
+        file: "src/data/home.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Headline", name: "headline", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+
+          - label: "Problem Section"
+            name: "problem"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "text" }
+              - { label: "Lead Paragraph", name: "lead", widget: "text" }
+              - { label: "Body Paragraph", name: "body", widget: "text" }
+              - { label: "Closing Line", name: "punchline", widget: "text" }
+
+          - label: "Services Section"
+            name: "services"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Introduction", name: "intro", widget: "text" }
+              - label: "Service Cards"
+                name: "items"
+                widget: "list"
+                collapsed: true
+                summary: "{{fields.title}}"
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Meet Your Advocate"
+            name: "advocate"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Credentials Line", name: "credentials", widget: "string" }
+              - label: "Biography Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - { label: "Highlighted Statement", name: "philosophy", widget: "text" }
+              - { label: "Link Text", name: "linkText", widget: "string" }
+
+          - label: "For Professionals"
+            name: "professionals"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Introduction", name: "intro", widget: "text" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Integrity Quote", name: "quote", widget: "text" }
+              - { label: "Attribution", name: "author", widget: "string" }
+
+      - label: "About Page"
+        name: "about"
+        file: "src/data/about.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+
+          - label: "Founder Story"
+            name: "story"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+          - label: "Experience"
+            name: "experience"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Introduction", name: "lead", widget: "text" }
+              - label: "Experience Cards"
+                name: "items"
+                widget: "list"
+                collapsed: true
+                summary: "{{fields.organization}}"
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
+                fields:
+                  - { label: "Badge", name: "badge", widget: "string" }
+                  - { label: "Organization", name: "organization", widget: "string" }
+                  - { label: "Role", name: "role", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Closing Call to Action"
+            name: "cta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+
+      - label: "Providers Page"
+        name: "providers"
+        file: "src/data/providers.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+
+          - label: "Professional Audiences"
+            name: "audiences"
+            widget: "list"
+            collapsed: true
+            summary: "{{fields.heading}}"
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Situation", name: "body", widget: "text" }
+              - { label: "How I Help", name: "help", widget: "text" }
+
+          - label: "FAQ Section"
+            name: "faq"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Introduction", name: "intro", widget: "text" }
+              - label: "FAQ Items"
+                name: "items"
+                widget: "list"
+                collapsed: true
+                summary: "{{fields.heading}}"
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Answer", name: "body", widget: "text" }
+
+          - label: "Closing Call to Action"
+            name: "cta"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "src/data/contact.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - { label: "Button Text", name: "buttonText", widget: "string" }
+
+  - name: "insights"
+    label: "Insights"
+    label_singular: "Insight"
+    description: "Create and edit articles shown in the Insights section."
+    folder: "src/content/insights"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    preview_path: "insights/{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+        picker_utc: true
+      - { label: "Category", name: "category", widget: "string", default: "Clinical Navigation" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Feature This Post", name: "isFeatured", widget: "boolean", default: false }
+      - label: "Article"
+        name: "body"
+        widget: "richtext"
+        modes: ["rich_text"]
+        buttons: ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"]
+        editor_components: []
