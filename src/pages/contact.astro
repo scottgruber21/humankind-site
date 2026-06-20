@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import InquiryForm from '../components/contact/InquiryForm.astro';
+import contactContent from '../data/contact.json';
 ---
 
 <BaseLayout title="Secure Private Advocacy" description="Initiate a patient advocate discovery review. Private clinical navigation and medical record translation options.">
-    <InquiryForm />
+    <InquiryForm content={contactContent} />
 </BaseLayout>

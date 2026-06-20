@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Nav from '../components/global/Nav.astro';
 import Footer from '../components/global/Footer.astro';
-import SEO from '../components/global/SEO.astro'; // Import the new SEO manager
+import SEO from '../components/global/SEO.astro';
 
 interface Props {
     title: string;
@@ -10,10 +10,10 @@ interface Props {
     image?: string;
 }
 
-const { 
-    title, 
-    description = "Expert clinical navigation and private patient advocacy for high-stakes medical situations.", 
-    image 
+const {
+    title,
+    description = "Expert clinical navigation and private patient advocacy for high-stakes medical situations.",
+    image
 } = Astro.props;
 ---
 
@@ -28,5 +28,24 @@ const {
         <slot />
     </main>
     <Footer />
+
+    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script is:inline>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on('init', (user) => {
+                const hasAuthToken =
+                    window.location.hash.includes('invite_token') ||
+                    window.location.hash.includes('confirmation_token') ||
+                    window.location.hash.includes('recovery_token');
+
+                if (!user && hasAuthToken) {
+                    window.netlifyIdentity.on('login', () => {
+                        window.location.href = '/admin/';
+                    });
+                    window.netlifyIdentity.open();
+                }
+            });
+        }
+    </script>
 </body>
 </html>
