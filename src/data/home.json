@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "headline": "The medical system is overwhelming. You shouldn't have to navigate it alone.",
+    "buttonText": "Book a Free 20-Minute Consultation"
+  },
+  "problem": {
+    "heading": "You need an advocate when the stakes are too high to navigate alone.",
+    "lead": "You or someone you love has received a serious diagnosis. The appointments are overwhelming, the terminology is impenetrable, and your doctors are brilliant — but busy.",
+    "body": "You are forced to make decisions that matter enormously, with incomplete information, under extreme time pressure. And in complex healthcare, a wrong turn costs far more than any fee.",
+    "punchline": "Most families don't know what they don't know — until it's too late."
+  },
+  "services": {
+    "heading": "What I Do",
+    "intro": "I step in to manage the clinical details so you can focus on your family.",
+    "items": [
+      {
+        "title": "Record Review & Translation",
+        "description": "I read every page of your medical records and translate what matters into plain language."
+      },
+      {
+        "title": "Second Opinion Coordination",
+        "description": "I know which institutions lead in which specialties. I facilitate the right second opinion, fast."
+      },
+      {
+        "title": "Provider Communication",
+        "description": "I communicate directly with your care team in clinical language so nothing is lost in translation."
+      },
+      {
+        "title": "Appointment Navigation",
+        "description": "I prepare you before every appointment and debrief with you after so you understand your options."
+      }
+    ]
+  },
+  "advocate": {
+    "heading": "Meet Your Advocate",
+    "credentials": "Kim, PA-C — Founder",
+    "paragraphs": [
+      "With 18 years of clinical experience as a Physician Assistant specializing in oncology, bone marrow transplant, and orthopedics, I have seen the healthcare system from the inside.",
+      "I know what it takes to get answers, and I know how easily things can fall through the cracks when a patient's care spans multiple specialists, brilliant doctors, and busy institutions."
+    ],
+    "philosophy": "My commitment is simple: I sit on your side of the table, speak your doctors' language, and make sure you have the clarity to make the right decisions.",
+    "linkText": "Let's talk about your situation"
+  },
+  "professionals": {
+    "heading": "For Professionals",
+    "intro": "I serve as a specialized resource for estate attorneys, wealth advisors, and concierge physicians.",
+    "description": "I complement your practice by translating the clinical side of the equation, ensuring your clients are as well-informed medically as they are legally.",
+    "quote": "Clinical integrity is my priority. I do not pay or receive referral fees.",
+    "author": "Kim — Patient Advocate, PA-C"
+  }
+}

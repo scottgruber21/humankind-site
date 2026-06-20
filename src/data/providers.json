@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "eyebrow": "Professional Partnerships",
+    "heading": "A clinical complement to your practice.",
+    "body": "I serve as a specialized resource for professionals whose clients are navigating complex medical crises. I handle the clinical translation, so you can focus on what you do best."
+  },
+  "audiences": [
+    {
+      "heading": "For Estate Attorneys & Wealth Advisors",
+      "body": "When a high-net-worth client receives a serious diagnosis during the planning process, legal and financial decisions suddenly become urgent. Families are overwhelmed, and there is rarely anyone translating the medical side of the equation.",
+      "help": "I step in to manage medical record review, second opinions, and care coordination. Your clients receive the same level of expert guidance for their health that they expect from you financially."
+    },
+    {
+      "heading": "For Concierge & DPC Physicians",
+      "body": "Your model is built on doing more for your patients. But there are limits to what any one physician can provide when a patient enters active cancer treatment or gets caught in a complex specialist referral chain.",
+      "help": "I am a complement, not a competitor. I navigate everything outside your lane, including attending specialist appointments and facilitating major center second opinions, so your patients come back to you more informed."
+    }
+  ],
+  "faq": {
+    "heading": "Practice & Integration Details",
+    "intro": "Clear boundaries and clinical integrity are the foundation of my referrals.",
+    "items": [
+      {
+        "heading": "Clinical Scope & Liability",
+        "body": "I am clear with every client: I do not provide medical treatment, and I do not diagnose. I provide informed guidance, clinical translation, and coordination. I carry professional liability coverage, and clients sign an agreement that clearly defines my role as an advocate, not a treating clinician."
+      },
+      {
+        "heading": "Advocacy vs. Social Work",
+        "body": "Hospital social workers are incredible, but they primarily focus on psychosocial support and insurance navigation for dozens of patients simultaneously. I provide dedicated clinical expertise: reading pathology reports, understanding staging criteria, and communicating peer-to-peer with physicians."
+      },
+      {
+        "heading": "Referral Fee Policy",
+        "body": "Integrity is critical to both of our practices. I do not pay or receive referral fees. My goal is to be genuinely useful to any client you send my way, ensuring they know you connected them to someone who helped."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Let's connect.",
+    "body": "I'd love to schedule a brief 15-minute introduction to understand your practice and see if there is a mutual fit for future client needs.",
+    "buttonText": "Request an Introduction"
+  }
+}

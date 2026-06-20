@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "eyebrow": "The Founder",
+    "heading": "Meet Kim Ely, PA-C",
+    "subtitle": "A dedicated ally bringing over 15 years of oncology experience directly to your side of the table, ensuring you never have to navigate the medical system alone."
+  },
+  "story": {
+    "heading": "From the Clinic to Your Corner",
+    "paragraphs": [
+      "I began my career as a Physician Assistant in private practice adult oncology. Every day, I treated patients facing the hardest news of their lives. But behind the scenes, I saw a recurring heartbreak: families being forced to navigate a maze of appointments, complex treatment paths, and impenetrable medical jargon completely on their own.",
+      "When you are caring for someone you love, you shouldn't have to suddenly become a medical expert. I created this practice because I believe patients deserve more than just brilliant doctors—they deserve a dedicated guide to translate the clinical details, manage the moving parts, and make the path forward clear."
+    ]
+  },
+  "experience": {
+    "heading": "The Clinical Foundation",
+    "lead": "My approach to advocacy was shaped inside some of the nation's premier medical programs. I know what exceptional, flawless care looks like from the inside—and I know how to demand it for your family.",
+    "items": [
+      {
+        "badge": "CHLA",
+        "organization": "Children’s Hospital Los Angeles",
+        "role": "Pediatric Oncology",
+        "description": "At CHLA, I witnessed the profound impact of fully unified care. The providers I worked alongside didn't operate in silos; they collaborated constantly and communicated early and often with the patient's family. It taught me early on that the best medicine is deeply connected, and no family should ever feel out of the loop."
+      },
+      {
+        "badge": "Hopkins",
+        "organization": "Johns Hopkins Medicine",
+        "role": "Oncology & Bone Marrow Transplant Team",
+        "description": "Serving patients through highly complex bone marrow transplants, I saw how easily things can fall through the cracks if someone isn't managing the big picture. My role required daily coordination across dozens of specialists, including oncologists, pharmacists, physical therapists, and more. This experience taught me exactly how to build, manage, and communicate with a truly comprehensive care team."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Bringing the Best of Medicine to You",
+    "body": "You deserve the highest standard of care without the exhaustion of managing it yourself. When the stakes are too high to look for answers alone, I step in to speak your doctors' clinical language, ask the right questions, and ensure your family's voice is always heard.",
+    "buttonText": "Request a Consultation"
+  }
+}

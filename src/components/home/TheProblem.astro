@@ -1,20 +1,24 @@
 ---
+interface Props {
+    content: {
+        heading: string;
+        lead: string;
+        body: string;
+        punchline: string;
+    };
+}
+
+const { content } = Astro.props;
 ---
 
 <section class="the-problem" id="problem">
     <div class="container">
-        <h2>You need an advocate when the stakes are too high to navigate alone.</h2>
-        
+        <h2>{content.heading}</h2>
+
         <div class="content">
-            <p class="lead">
-                You or someone you love has received a serious diagnosis. The appointments are overwhelming, the terminology is impenetrable, and your doctors are brilliant — but busy.
-            </p>
-            <p>
-                You are forced to make decisions that matter enormously, with incomplete information, under extreme time pressure. And in complex healthcare, a wrong turn costs far more than any fee.
-            </p>
-            <p class="punchline">
-                Most families don't know what they don't know — until it's too late.
-            </p>
+            <p class="lead">{content.lead}</p>
+            <p>{content.body}</p>
+            <p class="punchline">{content.punchline}</p>
         </div>
     </div>
 </section>
@@ -22,13 +26,13 @@
 <style>
     .the-problem {
         padding: 8rem 5%;
-        background-color: var(--white); /* Crisp white to contrast with the beige sections */
+        background-color: var(--white);
         display: flex;
         justify-content: center;
     }
 
     .container {
-        max-width: 800px; /* Kept intentionally narrow for reading focus */
+        max-width: 800px;
         text-align: center;
     }
 
@@ -69,7 +73,6 @@
         font-size: 1.25rem;
     }
 
-    /* Responsive Breakpoints */
     @media (max-width: 768px) {
         .the-problem {
             padding: 5rem 5%;
@@ -81,7 +84,8 @@
         p.lead {
             font-size: 1.15rem;
         }
-        p, p.punchline {
+        p,
+        p.punchline {
             font-size: 1.05rem;
         }
     }
