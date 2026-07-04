@@ -1,7 +1,7 @@
 <nav>
     <div class="logo-area">
-        <div class="logo-box">HKA</div>
-        <span class="brand-name">Human Kind Advocates</span>
+        <div class="logo-box"><a href="/">HKA</a></div>
+        <span class="brand-name"><a href="/">Human Kind Advocates</a></span>
     </div>
     
     <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">
@@ -33,14 +33,17 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
     .logo-area { display: flex; align-items: center; gap: 1rem; }
-    .logo-box {
+    .logo-box, .logo-box a {
         width: 40px; height: 40px;
         background: var(--royal-blue);
         border-radius: 4px;
         display: flex; align-items: center; justify-content: center;
         color: white; font-weight: bold;
+        text-decoration: none;
     }
-    .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: var(--navy); }
+    .brand-name, .brand-name a {
+        font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: var(--navy); text-decoration: none;
+    }
     
     /* Desktop Nav Links Styling */
     .nav-links a { text-decoration: none; color: var(--text-dark); margin-left: 2rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
