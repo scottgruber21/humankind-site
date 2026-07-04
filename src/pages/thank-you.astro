@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="Thank You | Human Kind Advocates"
+    description="Your consultation request has been received."
+>
+    <main class="thank-you">
+        <div>
+            <p class="eyebrow">Request received</p>
+            <h1>Thank you for reaching out.</h1>
+            <p>
+                Your consultation request has been received. We will respond
+                as soon as possible using your preferred contact method.
+            </p>
+
+            <a href="/" class="home-link">Return Home</a>
+        </div>
+    </main>
+</BaseLayout>
+
+<style>
+    .thank-you {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 5%;
+        background: var(--white);
+    }
+
+    .thank-you > div {
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .eyebrow {
+        color: var(--royal-blue);
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        margin: 1rem 0;
+        font-size: clamp(2.8rem, 7vw, 5rem);
+        line-height: 1.05;
+    }
+
+    .thank-you p {
+        max-width: 620px;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .home-link {
+        display: inline-block;
+        margin-top: 2rem;
+        color: var(--navy);
+        font-weight: 600;
+    }
+</style>

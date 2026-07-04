@@ -15,49 +15,152 @@ const { content } = Astro.props;
         <h2>{content.heading}</h2>
         <p class="form-subtitle">{content.intro}</p>
 
-        <form action="#" method="POST" class="intake-form">
+        <div class="privacy-notice" id="privacy-guidance" role="note">
+            <strong>Please keep this form general.</strong>
+            Do not include diagnoses, symptoms, treatment details, medications,
+            insurance information, medical records, or other sensitive health
+            information.
+        </div>
+
+       <form
+    name="consultation-request"
+    method="POST"
+    action="/thank-you/"
+    class="intake-form"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+>
+    <input
+        type="hidden"
+        name="form-name"
+        value="consultation-request"
+    />
+
+    <p class="honeypot">
+        <label>
+            Leave this field blank:
+            <input name="bot-field" />
+        </label>
+    </p>
             <div class="form-grid">
                 <div class="form-group">
                     <label for="name">Your Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe" />
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                    />
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com" />
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    />
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="(555) 000-0000" />
+                    <label for="phone">
+                        Phone Number
+                        <span class="optional">(optional)</span>
+                    </label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel"
+                    />
+                    <span class="field-help">
+                        Please include a number if you prefer to be contacted by phone.
+                    </span>
                 </div>
 
                 <div class="form-group">
-                    <label for="relationship">Relationship to Patient</label>
-                    <select id="relationship" name="relationship" required>
+                    <label for="contact-method">Preferred Contact Method</label>
+                    <select
+                        id="contact-method"
+                        name="contactMethod"
+                        required
+                    >
                         <option value="" disabled selected>Select option</option>
-                        <option value="self">I am the patient</option>
-                        <option value="spouse">Spouse / Partner</option>
-                        <option value="child">Adult Child</option>
-                        <option value="professional">Referring Professional (Attorney/MD)</option>
-                        <option value="other">Other</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label for="relationship">How Are You Reaching Out?</label>
+                    <select
+                        id="relationship"
+                        name="relationship"
+                        required
+                    >
+                        <option value="" disabled selected>Select option</option>
+                        <option value="self">For myself</option>
+                        <option value="family">
+                            For a family member or friend
+                        </option>
+                        <option value="professional">
+                            As a referring professional
+                        </option>
+                        <option value="general">
+                            With a general question
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">
+                        Best Time to Reach You
+                        <span class="optional">(optional)</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="availability"
+                        name="availability"
+                        maxlength="100"
+                        placeholder="For example: weekday afternoons"
+                    />
+                </div>
             </div>
 
-            <div class="form-group full-width">
-                <label for="message">How can I assist in your healthcare journey?</label>
-                <textarea id="message" name="message" rows="4" required placeholder="Please provide any information you think may be helpful"></textarea>
-            </div>
+            <label class="acknowledgment">
+                <input
+                    type="checkbox"
+                    name="privacyAcknowledgment"
+                    required
+                />
+                <span>
+                    I understand that this form is only for requesting contact
+                    and should not contain sensitive health information.
+                </span>
+            </label>
 
             <div class="form-submit">
-                <button type="submit" class="btn-submit">{content.buttonText}</button>
+                <button type="submit" class="btn-submit">
+                    {content.buttonText}
+                </button>
             </div>
         </form>
     </div>
 </section>
 
 <style>
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
     .inquiry-section {
         padding: 8rem 5%;
         background: var(--white);
@@ -77,8 +180,22 @@ const { content } = Astro.props;
     .form-subtitle {
         color: var(--text-muted);
         font-size: 1.1rem;
-        margin-bottom: 4rem;
-        max-width: 600px;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        max-width: 680px;
+    }
+
+    .privacy-notice {
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 3rem;
+        border-left: 4px solid var(--royal-blue);
+        background: var(--bg-beige);
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    .privacy-notice strong {
+        color: var(--navy);
     }
 
     .intake-form {
@@ -99,10 +216,6 @@ const { content } = Astro.props;
         gap: 0.5rem;
     }
 
-    .form-group.full-width {
-        grid-column: span 2;
-    }
-
     .form-group label {
         font-size: 0.85rem;
         text-transform: uppercase;
@@ -111,9 +224,21 @@ const { content } = Astro.props;
         color: var(--navy);
     }
 
+    .optional {
+        color: var(--text-muted);
+        font-weight: 400;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+
+    .field-help {
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
     .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .form-group select {
         padding: 1rem;
         border: 1px solid rgba(10, 34, 64, 0.2);
         background: var(--bg-beige);
@@ -125,14 +250,28 @@ const { content } = Astro.props;
     }
 
     .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
+    .form-group select:focus {
         outline: none;
         border-color: var(--royal-blue);
     }
 
+    .acknowledgment {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        cursor: pointer;
+    }
+
+    .acknowledgment input {
+        flex: 0 0 auto;
+        margin-top: 0.25rem;
+    }
+
     .form-submit {
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 
     .btn-submit {
@@ -156,6 +295,11 @@ const { content } = Astro.props;
         box-shadow: 20px 20px 0 var(--bg-beige);
     }
 
+    .btn-submit:focus-visible {
+        outline: 3px solid var(--royal-blue);
+        outline-offset: 4px;
+    }
+
     @media (max-width: 768px) {
         .inquiry-section {
             padding: 4rem 5%;
@@ -166,17 +310,16 @@ const { content } = Astro.props;
         }
 
         .form-subtitle {
-            margin-bottom: 2.5rem;
             font-size: 1rem;
+        }
+
+        .privacy-notice {
+            margin-bottom: 2.5rem;
         }
 
         .form-grid {
             grid-template-columns: 1fr;
             gap: 2rem;
-        }
-
-        .form-group.full-width {
-            grid-column: span 1;
         }
 
         .btn-submit {
