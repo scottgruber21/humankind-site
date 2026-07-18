@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+    {
+        name: 'Deep Dive',
+        frequency: 'One-time',
+        session: '90-minute session',
+        description:
+            'A comprehensive review of your situation with a clear written roadmap delivered after the session. The starting point for most clients.',
+        price: '$500',
+        billing: 'One-time payment',
+        url: 'https://buy.stripe.com/cNi3cu33p0tOe6Yfqu3ZK01',
+        featured: true
+    },
+    {
+        name: 'Navigator',
+        frequency: 'Bi-weekly sessions',
+        session: '30–60 minutes',
+        description:
+            'Expert check-ins for families who are managing well but want a knowledgeable advocate in their corner who can help optimize outcomes and prevent crises.',
+        price: '$1,500',
+        billing: 'Billed monthly',
+        url: 'https://buy.stripe.com/4gM5kC1Zl3G07IAa6a3ZK00',
+        featured: false
+    },
+    {
+        name: 'Active Advocacy',
+        frequency: 'Weekly sessions',
+        session: 'Full coordination',
+        description:
+            'Active management of complex, evolving situations, including coordinating care, translating decisions, and making sure nothing falls through the cracks.',
+        price: '$2,500',
+        billing: 'Billed monthly',
+        url: 'https://buy.stripe.com/cNi6oG1Zl2BW9QI9263ZK02',
+        featured: false
+    },
+    {
+        name: 'White Glove',
+        frequency: 'Unlimited access',
+        session: 'Full presence',
+        description:
+            'Complete coverage for the most complex cases. Unlimited access to Kim across calls, texts, and email. Kim attends important visits personally.',
+        price: '$4,500',
+        billing: 'Billed monthly',
+        url: 'https://buy.stripe.com/fZu3cubzVa4o3skcei3ZK03',
+        featured: false
+    }
+];
+---
+
+<BaseLayout
+    title="Payment | Human Kind Advocates"
+    description="Secure payment options for Human Kind Advocates services."
+>
+    <main>
+        <section class="payment-hero">
+            <div class="payment-hero__inner">
+                <p class="eyebrow" style="color: white">Secure payment</p>
+                <h1 style="color: white">Select your service.</h1>
+                <p class="hero-copy">
+                    Choose the engagement you discussed with Kim. Each button
+                    will take you to a secure Stripe checkout page.
+                </p>
+            </div>
+        </section>
+
+        <section class="payment-options">
+            <div class="payment-grid">
+                {
+                    services.map((service) => (
+                        <article
+                            class:list={[
+                                'payment-card',
+                                { 'payment-card--featured': service.featured }
+                            ]}
+                        >
+                            {service.featured && (
+                                <p class="recommended">Recommended starting point</p>
+                            )}
+
+                            <div class="card-heading">
+                                <h2>{service.name}</h2>
+
+                                <p class="service-format">
+                                    <span>{service.frequency}</span>
+                                    <span aria-hidden="true">•</span>
+                                    <span>{service.session}</span>
+                                </p>
+                            </div>
+
+                            <p class="service-description">
+                                {service.description}
+                            </p>
+
+                            <div class="pricing">
+                                <p class="price">{service.price}</p>
+                                <p class="billing">{service.billing}</p>
+                            </div>
+
+                            <a
+                                href={service.url}
+                                class="payment-button"
+                                aria-label={`Continue to secure payment for ${service.name}`}
+                            >
+                                Continue to Secure Payment
+                            </a>
+                        </article>
+                    ))
+                }
+            </div>
+
+            <div class="payment-note">
+                <p>
+                    Payments are processed securely through Stripe. Please select
+                    only the service you have discussed with Human Kind Advocates.
+                </p>
+
+                <a href="/contact/">Questions before paying? Contact us</a>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+    .payment-hero {
+        padding: 8rem 5% 5rem;
+        background: var(--navy);
+        color: var(--white);
+    }
+
+    .payment-hero__inner {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    .eyebrow {
+        margin: 0 0 1rem;
+        color: var(--royal-blue);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .payment-hero h1 {
+        max-width: 800px;
+        margin: 0;
+        font-size: clamp(3rem, 7vw, 5.5rem);
+        line-height: 1;
+    }
+
+    .hero-copy {
+        max-width: 650px;
+        margin: 2rem 0 0;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+
+    .payment-options {
+        padding: 6rem 5% 8rem;
+        background: var(--bg-beige);
+    }
+
+    .payment-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    .payment-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        padding: 2.5rem;
+        border: 1px solid rgba(10, 34, 64, 0.14);
+        background: var(--white);
+        box-shadow: 12px 12px 0 rgba(10, 34, 64, 0.07);
+    }
+
+    .payment-card--featured {
+        border: 2px solid var(--royal-blue);
+    }
+
+    .recommended {
+        display: inline-block;
+        align-self: flex-start;
+        margin: -2.5rem 0 2rem;
+        padding: 0.65rem 1rem;
+        background: var(--royal-blue);
+        color: var(--white);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    .card-heading h2 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+
+    .service-format {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin: 1rem 0 0;
+        color: var(--royal-blue);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+    }
+
+    .service-description {
+        flex-grow: 1;
+        margin: 2rem 0;
+        color: var(--text-muted);
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .pricing {
+        padding-top: 1.75rem;
+        border-top: 1px solid rgba(10, 34, 64, 0.12);
+    }
+
+    .price {
+        margin: 0;
+        color: var(--navy);
+        font-size: 2.25rem;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    .billing {
+        margin: 0.5rem 0 0;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    .payment-button {
+        display: block;
+        margin-top: 2rem;
+        padding: 1.15rem 1.5rem;
+        background: var(--navy);
+        color: var(--white);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .payment-button:hover {
+        background: var(--royal-blue);
+        transform: translateY(-3px);
+    }
+
+    .payment-button:focus-visible {
+        outline: 3px solid var(--royal-blue);
+        outline-offset: 4px;
+    }
+
+    .payment-note {
+        width: 100%;
+        max-width: 760px;
+        margin: 4rem auto 0;
+        text-align: center;
+    }
+
+    .payment-note p {
+        margin: 0;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    .payment-note a {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--navy);
+        font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+        .payment-hero {
+            padding: 6rem 5% 4rem;
+        }
+
+        .payment-options {
+            padding: 4rem 5% 6rem;
+        }
+
+        .payment-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .payment-card {
+            padding: 2rem;
+        }
+
+        .recommended {
+            margin: -2rem 0 2rem;
+        }
+    }
+</style>
+```
